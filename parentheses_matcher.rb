@@ -1,8 +1,10 @@
 class ParenthesesMatcher
   def self.match(str, idx)
-    if even_parens?(str)
-      other_index = idx + str.length / 2
+    other_index = idx + str.length / 2
+    if even_parens?(str) && !str[other_index].nil?
       other_index
+    else
+      -1
     end
   end
 
