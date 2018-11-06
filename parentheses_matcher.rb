@@ -3,10 +3,10 @@ class ParenthesesMatcher
     other_index = idx + str.scan('(').count + 1
     if str == '()' && idx == 0
       1
-    elsif even_parens?(str) && !str[other_index].nil?
-      other_index
-    else
+    elsif str[other_index].nil?
       -1
+    else
+      other_index
     end
   end
 
